@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.1-alter-technique-type-column
+      author: Mustafa Yacoub
+      changes:
+        - modifyDataType:
+            columnName: type
+            newDataType: org.example.rentmaster.model.enums.TechnigueType
+            tableName: technique
