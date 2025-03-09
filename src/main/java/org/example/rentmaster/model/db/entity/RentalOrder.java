@@ -61,5 +61,8 @@ public class RentalOrder {
     @Column(name = "updatedAt")
     private LocalDateTime updatedAt = LocalDateTime.now();
 
+    @Column(name = "addrres")
+    private String addrres;
+
 
 }

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: your-name
+      changes:
+        - addColumn:
+            tableName: rentalOrder
+            columns:
+              - column:
+                  name: address
+                  type: varchar(300)
+                  remarks: Address of the rental order
+          onlyIfExists: true

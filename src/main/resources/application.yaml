@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5440/postgres
+    url: jdbc:postgresql://localhost:54321/db001
     username: postgres
     password: postgres
-    driver-class-name: org.postgresql.Driver
+#    driver-class-name: org.postgresql.Driver
 
   jpa:
     database: postgresql
@@ -17,3 +17,11 @@ spring:
        jdbc:
         lob:
           non_contextual_creation: true
+
+  liquibase:
+    change-log: classpath:db.changelog\db.changelog-master.yaml
+    contexts: development
+    default-schema: public
+
+  main:
+    allow-bean-definition-overriding: true
