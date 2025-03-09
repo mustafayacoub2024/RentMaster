@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,8 +37,11 @@ public class Technique {
     @JoinColumn(name = "branchId")
     private Branches branch;
 
-    @Column(name = "type")
-    private String type;
+    @OneToOne
+    @JsonManagedReference(value = "technique_type")
+    @JoinColumn(name = "technique_type_id")
+    private TechnigueType type;
+
 
     @Column(name = "baseCost")
     private Double baseCost; //Базовая стоимость аренды
