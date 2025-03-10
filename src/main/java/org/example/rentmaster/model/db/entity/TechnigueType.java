@@ -10,6 +10,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,7 +19,7 @@ import lombok.Setter;
 @Entity(name = "technique_type")
 public class TechnigueType {
     @Id
-    private Long technigueTypeId;
+    private UUID technigueTypeId;
 
     @Column(name = "technigueType")
     private String technigueType;
