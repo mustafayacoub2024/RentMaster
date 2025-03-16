@@ -2,11 +2,7 @@ package org.example.rentmaster.model.db.entity;
 /*создание нового заказа, изменение существующего заказа, расчет стоимости аренды*/
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +11,7 @@ import org.example.rentmaster.model.enums.Status;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 /*Заявка на аренду строительной техники*/
@@ -63,6 +60,10 @@ public class RentalOrder {
 
     @Column(name = "addrres")
     private String addrres;
+
+    @OneToMany
+    @JoinColumn(name="personalNumber")
+    private List<Drivers> drivers;
 
 
 }
